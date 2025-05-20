@@ -20,9 +20,9 @@ Ensure you have the following installed on your local machine or the admin envir
 ## Tools Required:
 |Tool	|Version	|Notes|
 | --- |--- | ---  |
+|AWS CLI	|≥ 2.0	|For ECR and EC2 interaction |
 |Terraform	|≥ 1.0|	For provisioning infrastructure |
 |Ansible	|≥ 2.10	|For configuring Jenkins, Docker, K8s |
-|AWS CLI	|≥ 2.0	|For ECR and EC2 interaction |
 |kubectl	|Latest	|For interacting with Kubernetes cluster |
 |Docker	|Latest|For image building |
 |Helm	|≥ 3	|For Helm deployments |
