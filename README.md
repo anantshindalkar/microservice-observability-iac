@@ -14,6 +14,21 @@ This repository contains infrastructure as code (IaC) for deploying a microservi
 ## Structure
 
 See folders for respective components.
+## Environment Preparation
+Ensure you have the following installed on your local machine or the admin environment:
+
+## Tools Required:
+|Tool	|Version	|Notes|
+| --- |--- | ---  |
+|Terraform	|≥ 1.0|	For provisioning infrastructure |
+|Ansible	|≥ 2.10	|For configuring Jenkins, Docker, K8s |
+|AWS CLI	|≥ 2.0	|For ECR and EC2 interaction |
+|kubectl	|Latest	|For interacting with Kubernetes cluster |
+|Docker	|Latest|For image building |
+|Helm	|≥ 3	|For Helm deployments |
+|Git	|Any	|Version control |
+|Maven	|Latest	|Java build tool |
+|Java	|11+	|For Maven builds |
 
 ## To Deploy
 
