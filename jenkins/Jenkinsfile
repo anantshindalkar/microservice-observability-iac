@@ -1,0 +1,33 @@
+
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/example/microservice-app.git'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+    stage('Code Analysis') {
+      steps {
+        sh 'mvn sonar:sonar'
+      }
+    }
+    stage('Docker Build & Push') {
+      steps {
+        sh 'docker build -t my-app .'
+        sh 'docker tag my-app:latest <your_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-app:latest'
+        sh 'docker push <your_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-app:latest'
+      }
+    }
+    stage('Deploy to K8s') {
+      steps {
+        sh 'kubectl apply -f k8s/app-deployment.yaml'
+      }
+    }
+  }
+}
